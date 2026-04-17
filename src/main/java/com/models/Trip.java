@@ -14,6 +14,15 @@ public class Trip {
 	private boolean activo;
 	private Date fecha;
 	private Integer idCategoria;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Trip [id=" + id + ", nomTrip=" + nomTrip + ", descripcion=" + descripcion + ", costo=" + costo
+				+ ", calificacion=" + calificacion + ", imagen=" + imagen + ", detalles=" + detalles + ", activo="
+				+ activo + ", fecha=" + fecha + ", idCategoria=" + idCategoria + "]";
+	}
 	public Integer getId() {
 		return id;
 	}

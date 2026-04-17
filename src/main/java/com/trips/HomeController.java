@@ -1,11 +1,15 @@
 package com.trips;
 
 import org.springframework.ui.Model;
+
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import com.models.Trip;
 
 
 @Controller
@@ -29,6 +33,20 @@ public class HomeController {
 		model.addAttribute("listadoTrips",lista);
 		return "listado";
 	}
+	
+	@GetMapping("/detalle")
+	public String mostrarDetalle(Model model) {
+		Trip trip = new Trip();
+		trip.setNomTrip("Rapel en volcatenango");
+		trip.setDescripcion("aventura rapel en un circuito conectado en las montañas");
+		trip.setFecha(new Date());
+		trip.setCosto(10.0);
+		
+		model.addAttribute("trip",trip);
+		return "detalle";
+	}
+	
+	
 	
 	
 }
