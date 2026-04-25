@@ -1,6 +1,7 @@
 package com.trips;
 
 import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -15,10 +16,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.models.Trip;
+import com.trip.services.ITripServices;
 
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	private ITripServices tripServices;
+	
+	
+	
+	
 	@GetMapping("/")
 	public String mostrarHome(Model model)	
 	{
@@ -102,7 +111,7 @@ public class HomeController {
 	 @GetMapping("/tabla")
 	    public String mostrarTabla(Model model) {
 
-	        List<Trip> lista = getTrips();
+	        List<Trip> lista = tripServices.buscarTodo();
 	        model.addAttribute("trips", lista);
 
 	        return "tabla";

@@ -9,12 +9,12 @@ public class Trip {
 	private String descripcion;
 	private double costo;
 	private int calificacion;
-	private String imagen;
 	private String detalles;
 	private boolean activo;
 	private Date fecha;
 	private Integer idCategoria;
 	private Integer destacado;
+	private String imagen="no-image.png";
 	
 	
 	
